@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VentanaComanda.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C02</a> &gt; <a href="index.source.html" class="el_package">presentacion</a> &gt; <span class="el_source">VentanaComanda.java</span></div><h1>VentanaComanda.java</h1><pre class="source lang-java linenums">package presentacion;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+
+import dominio.GestorCamarero;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class VentanaComanda {
+
+	private JFrame frame;
+	private JTextField txtPrimero;
+	private JTextField txtSegundo;
+	private JTextField txtPostre;
+	private JTextField txtBebida;
+	private JTextField txtEntrantes;
+	private JTextField txtIDCamarero;
+	private JTextField txtIDMesa;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="fc" id="L32">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L35">					VentanaComanda window = new VentanaComanda();</span>
+<span class="nc" id="L36">					window.frame.setVisible(true);</span>
+<span class="nc" id="L37">				} catch (Exception e) {</span>
+<span class="nc" id="L38">					e.printStackTrace();</span>
+<span class="nc" id="L39">				}</span>
+<span class="nc" id="L40">			}</span>
+		});
+<span class="fc" id="L42">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="fc" id="L47">	public VentanaComanda() {</span>
+<span class="fc" id="L48">		initialize();</span>
+<span class="fc" id="L49">	}</span>
+	
+	public void set_visible(boolean b) {
+<span class="nc" id="L52">		frame.setVisible(b);</span>
+<span class="nc" id="L53">	}</span>
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+<span class="fc" id="L59">		frame = new JFrame();</span>
+<span class="fc" id="L60">		frame.setBounds(100, 100, 450, 481);</span>
+<span class="fc" id="L61">		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L62">		frame.getContentPane().setLayout(null);</span>
+		
+<span class="fc" id="L64">		txtPrimero = new JTextField();</span>
+<span class="fc" id="L65">		txtPrimero.setBounds(170, 11, 110, 20);</span>
+<span class="fc" id="L66">		frame.getContentPane().add(txtPrimero);</span>
+<span class="fc" id="L67">		txtPrimero.setColumns(10);</span>
+		
+<span class="fc" id="L69">		JLabel lblPrimero = new JLabel(&quot;Primero:&quot;);</span>
+<span class="fc" id="L70">		lblPrimero.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="fc" id="L71">		lblPrimero.setBounds(76, 14, 63, 14);</span>
+<span class="fc" id="L72">		frame.getContentPane().add(lblPrimero);</span>
+		
+<span class="fc" id="L74">		txtSegundo = new JTextField();</span>
+<span class="fc" id="L75">		txtSegundo.setColumns(10);</span>
+<span class="fc" id="L76">		txtSegundo.setBounds(170, 64, 110, 20);</span>
+<span class="fc" id="L77">		frame.getContentPane().add(txtSegundo);</span>
+		
+<span class="fc" id="L79">		JLabel lblSegundo = new JLabel(&quot;Segundo:&quot;);</span>
+<span class="fc" id="L80">		lblSegundo.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="fc" id="L81">		lblSegundo.setBounds(76, 67, 63, 14);</span>
+<span class="fc" id="L82">		frame.getContentPane().add(lblSegundo);</span>
+		
+<span class="fc" id="L84">		JLabel lblPostre = new JLabel(&quot;Postre:&quot;);</span>
+<span class="fc" id="L85">		lblPostre.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="fc" id="L86">		lblPostre.setBounds(76, 126, 63, 14);</span>
+<span class="fc" id="L87">		frame.getContentPane().add(lblPostre);</span>
+		
+<span class="fc" id="L89">		txtPostre = new JTextField();</span>
+<span class="fc" id="L90">		txtPostre.setColumns(10);</span>
+<span class="fc" id="L91">		txtPostre.setBounds(170, 123, 110, 20);</span>
+<span class="fc" id="L92">		frame.getContentPane().add(txtPostre);</span>
+		
+<span class="fc" id="L94">		txtBebida = new JTextField();</span>
+<span class="fc" id="L95">		txtBebida.setColumns(10);</span>
+<span class="fc" id="L96">		txtBebida.setBounds(170, 179, 110, 20);</span>
+<span class="fc" id="L97">		frame.getContentPane().add(txtBebida);</span>
+		
+<span class="fc" id="L99">		JLabel lblBebida = new JLabel(&quot;Bebida:&quot;);</span>
+<span class="fc" id="L100">		lblBebida.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="fc" id="L101">		lblBebida.setBounds(76, 182, 63, 14);</span>
+<span class="fc" id="L102">		frame.getContentPane().add(lblBebida);</span>
+		
+<span class="fc" id="L104">		JLabel lblEntrantes = new JLabel(&quot;Entrantes:&quot;);</span>
+<span class="fc" id="L105">		lblEntrantes.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="fc" id="L106">		lblEntrantes.setBounds(76, 240, 63, 14);</span>
+<span class="fc" id="L107">		frame.getContentPane().add(lblEntrantes);</span>
+		
+<span class="fc" id="L109">		txtEntrantes = new JTextField();</span>
+<span class="fc" id="L110">		txtEntrantes.setColumns(10);</span>
+<span class="fc" id="L111">		txtEntrantes.setBounds(170, 237, 110, 20);</span>
+<span class="fc" id="L112">		frame.getContentPane().add(txtEntrantes);</span>
+		
+<span class="fc" id="L114">		JButton btnAnotarComanda = new JButton(&quot;Anotar comanda&quot;);</span>
+<span class="fc" id="L115">		btnAnotarComanda.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L117">				GestorCamarero gestor_camarero = new GestorCamarero();</span>
+				try {
+<span class="nc" id="L119">				gestor_camarero.crearComanda(Integer.parseInt(txtPrimero.getText()), Integer.parseInt(txtSegundo.getText()), Integer.parseInt(txtPostre.getText()), </span>
+<span class="nc" id="L120">						Integer.parseInt(txtBebida.getText()), Integer.parseInt(txtEntrantes.getText()), Integer.parseInt(txtIDCamarero.getText()), Integer.parseInt(txtIDMesa.getText()));</span>
+<span class="nc" id="L121">				JOptionPane.showMessageDialog(frame, &quot;Comanda anotada con éxito&quot;, &quot;Comanda Anotada&quot;,</span>
+						JOptionPane.INFORMATION_MESSAGE);
+<span class="nc" id="L123">				} catch (Exception e) {</span>
+<span class="nc" id="L124">					e.printStackTrace();</span>
+<span class="nc" id="L125">				}</span>
+<span class="nc" id="L126">			}</span>
+		});
+<span class="fc" id="L128">		btnAnotarComanda.setBounds(166, 403, 114, 23);</span>
+<span class="fc" id="L129">		frame.getContentPane().add(btnAnotarComanda);</span>
+		
+<span class="fc" id="L131">		JLabel lblIDCamarero = new JLabel(&quot;IdCamarero:&quot;);</span>
+<span class="fc" id="L132">		lblIDCamarero.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="fc" id="L133">		lblIDCamarero.setBounds(76, 292, 63, 14);</span>
+<span class="fc" id="L134">		frame.getContentPane().add(lblIDCamarero);</span>
+		
+<span class="fc" id="L136">		txtIDCamarero = new JTextField();</span>
+<span class="fc" id="L137">		txtIDCamarero.setBounds(170, 289, 110, 20);</span>
+<span class="fc" id="L138">		frame.getContentPane().add(txtIDCamarero);</span>
+<span class="fc" id="L139">		txtIDCamarero.setColumns(10);</span>
+		
+<span class="fc" id="L141">		JLabel lblIDMesa = new JLabel(&quot;IdMesa:&quot;);</span>
+<span class="fc" id="L142">		lblIDMesa.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="fc" id="L143">		lblIDMesa.setBounds(76, 348, 63, 14);</span>
+<span class="fc" id="L144">		frame.getContentPane().add(lblIDMesa);</span>
+		
+<span class="fc" id="L146">		txtIDMesa = new JTextField();</span>
+<span class="fc" id="L147">		txtIDMesa.setBounds(170, 345, 110, 20);</span>
+<span class="fc" id="L148">		frame.getContentPane().add(txtIDMesa);</span>
+<span class="fc" id="L149">		txtIDMesa.setColumns(10);</span>
+<span class="fc" id="L150">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

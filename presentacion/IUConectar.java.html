@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IUConectar.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C02</a> &gt; <a href="index.source.html" class="el_package">presentacion</a> &gt; <span class="el_source">IUConectar.java</span></div><h1>IUConectar.java</h1><pre class="source lang-java linenums">package presentacion;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Rectangle;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class IUConectar {
+
+	private JFrame frame;
+	private JButton btnJefeSala;
+	private JButton btnCamarero;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="fc" id="L24">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="fc" id="L27">					IUConectar window = new IUConectar();</span>
+<span class="fc" id="L28">					window.frame.setVisible(true);</span>
+<span class="nc" id="L29">				} catch (Exception e) {</span>
+<span class="nc" id="L30">					e.printStackTrace();</span>
+<span class="fc" id="L31">				}</span>
+<span class="fc" id="L32">			}</span>
+		});
+<span class="fc" id="L34">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="fc" id="L39">	public IUConectar() {</span>
+<span class="fc" id="L40">		initialize();</span>
+<span class="fc" id="L41">	}</span>
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+<span class="fc" id="L47">		frame = new JFrame();</span>
+<span class="fc" id="L48">		frame.setBounds(new Rectangle(0, 0, 1024, 768));</span>
+<span class="fc" id="L49">		frame.setResizable(false);</span>
+<span class="fc" id="L50">		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L51">		frame.getContentPane().setLayout(null);</span>
+		
+<span class="fc" id="L53">		btnJefeSala = new JButton(&quot;Jefe de Sala&quot;);</span>
+<span class="fc" id="L54">		btnJefeSala.addMouseListener(new MouseAdapter() {</span>
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				try {
+<span class="nc" id="L58">					IUJefeDeSala iu_jefe_sala = new IUJefeDeSala();</span>
+<span class="nc" id="L59">					iu_jefe_sala.set_visible(true);</span>
+<span class="nc" id="L60">				} catch (Exception ex) {</span>
+<span class="nc" id="L61">					ex.printStackTrace();</span>
+<span class="nc" id="L62">				}</span>
+<span class="nc" id="L63">				frame.setVisible(false);</span>
+<span class="nc" id="L64">			}</span>
+		});
+<span class="fc" id="L66">		btnJefeSala.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 37));</span>
+<span class="fc" id="L67">		btnJefeSala.setBounds(137, 102, 303, 272);</span>
+<span class="fc" id="L68">		frame.getContentPane().add(btnJefeSala);</span>
+		
+<span class="fc" id="L70">		btnCamarero = new JButton(&quot;Camarero&quot;);</span>
+<span class="fc" id="L71">		btnCamarero.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 37));</span>
+<span class="fc" id="L72">		btnCamarero.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L74">			}</span>
+		});
+<span class="fc" id="L76">		btnCamarero.setBounds(577, 102, 303, 272);</span>
+<span class="fc" id="L77">		frame.getContentPane().add(btnCamarero);</span>
+<span class="fc" id="L78">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

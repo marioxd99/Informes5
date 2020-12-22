@@ -1,0 +1,69 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+C02,dominio,GestorComidasTest,0,31,0,0,0,10,0,4,0,4
+C02,dominio,GestorJefeSala,3,32,2,2,2,10,3,2,1,2
+C02,dominio,GestorCocina,2,20,0,0,1,4,1,2,1,2
+C02,dominio,GestorCamarero,0,34,0,0,0,12,0,5,0,5
+C02,dominio,GestorJefeSalaTest,0,22,0,0,0,9,0,4,0,4
+C02,dominio,GestorMesaTest,15,64,5,3,3,19,4,7,0,7
+C02,dominio,GestorEstadisticas,0,39,0,0,0,10,0,5,0,5
+C02,dominio,GestorEstadisticasTest,4,63,4,4,0,18,4,7,0,7
+C02,dominio,GestorComidas,10,38,5,5,0,11,5,3,0,3
+C02,dominio,GestorCamareroTest,0,47,0,0,0,15,0,6,0,6
+C02,dominio,GestorComandaTest,2,64,2,2,0,16,2,5,0,5
+C02,dominio,GestorReservasTest,21,40,3,1,5,12,2,5,0,5
+C02,dominio,GestorComanda,12,26,1,1,4,8,2,3,1,3
+C02,dominio,GestorMesa,30,37,6,2,10,13,6,4,2,4
+C02,dominio,GestorReservas,23,15,4,0,8,5,3,3,1,3
+C02,dominio,GestorCocinaTest,4,26,1,1,1,6,1,3,0,3
+C02,presentacion,IU_CocinaTest,0,24,0,0,0,6,0,3,0,3
+C02,presentacion,IU_Camarero.new ActionListener() {...},21,6,0,0,8,1,1,1,1,1
+C02,presentacion,IUCancelarReserva,3,107,0,0,2,23,0,2,0,2
+C02,presentacion,IU_Camarero.new Runnable() {...},3,13,0,0,2,5,0,2,0,2
+C02,presentacion,IUConectar.new MouseAdapter() {...},17,6,0,0,7,1,1,1,1,1
+C02,presentacion,IUConectar.new Runnable() {...},3,13,0,0,2,5,0,2,0,2
+C02,presentacion,IU_Cocina.new Runnable() {...},3,13,0,0,2,5,0,2,0,2
+C02,presentacion,IU_Cocina.new ActionListener() {...},1,6,0,0,1,1,1,1,1,1
+C02,presentacion,IUConectar.new ActionListener() {...},1,6,0,0,1,1,1,1,1,1
+C02,presentacion,IUConectarTest,0,24,0,0,0,6,0,3,0,3
+C02,presentacion,IUJefeDeSalaTest,0,20,0,0,0,5,0,3,0,3
+C02,presentacion,VentanaComanda.new ActionListener() {...},55,6,0,0,8,1,1,1,1,1
+C02,presentacion,VentanaComanda.new Runnable() {...},13,3,0,0,6,1,1,1,1,1
+C02,presentacion,IU_Supervisor.new ActionListener() {...},28,6,0,0,7,1,1,1,1,1
+C02,presentacion,IU_Supervisor.new Runnable() {...},3,13,0,0,2,5,0,2,0,2
+C02,presentacion,IU_Supervisor.new ActionListener() {...},28,6,0,0,7,1,1,1,1,1
+C02,presentacion,IUCancelarReservaTest,0,20,0,0,0,5,0,3,0,3
+C02,presentacion,IU_Supervisor.new ActionListener() {...},28,6,0,0,7,1,1,1,1,1
+C02,presentacion,IU_Supervisor,0,181,0,0,0,34,0,3,0,3
+C02,presentacion,VentanaComandaTest,0,24,0,0,0,6,0,3,0,3
+C02,presentacion,IU_Supervisor.new ActionListener() {...},28,6,0,0,7,1,1,1,1,1
+C02,presentacion,VentanaCuentaTest,0,24,0,0,0,6,0,3,0,3
+C02,presentacion,IU_CamareroBarra.new Runnable() {...},3,13,0,0,2,5,0,2,0,2
+C02,presentacion,IUJefeDeSala,11,415,0,12,6,75,1,8,1,2
+C02,presentacion,IUJefeDeSala.new ActionListener() {...},34,9,0,0,9,1,1,1,1,1
+C02,presentacion,IUJefeDeSala.new ActionListener() {...},9,6,0,0,5,1,1,1,1,1
+C02,presentacion,IU_CamareroBarra,0,153,0,0,0,30,0,3,0,3
+C02,presentacion,IUJefeDeSala.new ActionListener() {...},88,9,0,0,15,1,1,1,1,1
+C02,presentacion,IU_CamareroBarraTest,0,24,0,0,0,6,0,3,0,3
+C02,presentacion,IU_Cocina,7,160,0,0,3,31,2,3,2,3
+C02,presentacion,IUCancelarReserva.new ActionListener() {...},28,9,0,0,9,1,1,1,1,1
+C02,presentacion,IU_Camarero,5,227,0,0,2,44,1,3,1,3
+C02,presentacion,IUConectar,0,111,0,0,0,21,0,3,0,3
+C02,presentacion,VentanaComanda,5,356,0,0,2,70,1,3,1,3
+C02,presentacion,IU_CamareroTest,0,24,0,0,0,6,0,3,0,3
+C02,presentacion,IU_SupervisorTest,0,24,0,0,0,6,0,3,0,3
+C02,presentacion,VentanaCuenta.new ActionListener() {...},33,6,0,0,9,1,1,1,1,1
+C02,presentacion,VentanaCuenta.new Runnable() {...},13,3,0,0,6,1,1,1,1,1
+C02,presentacion,VentanaCuenta.new ActionListener() {...},20,6,0,0,6,1,1,1,1,1
+C02,presentacion,VentanaCuenta.new ActionListener() {...},19,6,0,0,6,1,1,1,1,1
+C02,presentacion,IU_Camarero.new ActionListener() {...},10,6,0,0,3,1,1,1,1,1
+C02,presentacion,IU_Camarero.new ActionListener() {...},17,6,0,0,7,1,1,1,1,1
+C02,presentacion,IU_Camarero.new ActionListener() {...},17,6,0,0,7,1,1,1,1,1
+C02,presentacion,IU_Camarero.new ActionListener() {...},29,6,0,0,7,1,1,1,1,1
+C02,presentacion,VentanaCuenta,5,245,0,0,2,46,1,3,1,3
+C02,persistencia,Ingredientes,45,103,0,2,12,26,6,9,6,8
+C02,persistencia,Reserva,43,226,0,2,4,52,2,12,2,11
+C02,persistencia,CamareroTest,0,18,0,0,0,5,0,2,0,2
+C02,persistencia,Camarero,16,73,0,2,3,20,2,6,2,5
+C02,persistencia,Comanda,54,354,0,4,4,73,4,21,4,19
+C02,persistencia,Mesa,43,312,0,16,10,73,5,19,5,11
+C02,persistencia,AgenteBD,6,100,0,6,3,32,3,9,3,6

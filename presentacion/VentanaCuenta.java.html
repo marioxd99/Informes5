@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VentanaCuenta.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C02</a> &gt; <a href="index.source.html" class="el_package">presentacion</a> &gt; <span class="el_source">VentanaCuenta.java</span></div><h1>VentanaCuenta.java</h1><pre class="source lang-java linenums">package presentacion;
+
+import dominio.GestorComanda;
+import dominio.GestorCamarero;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+
+public class VentanaCuenta {
+
+	private JFrame frame;
+	private JTextField txtIDComanda;
+	private JTextField txtPrecio;
+	private JTextField txtIDMesa;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="fc" id="L30">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L33">					VentanaCuenta window = new VentanaCuenta();</span>
+<span class="nc" id="L34">					window.frame.setVisible(true);</span>
+<span class="nc" id="L35">				} catch (Exception e) {</span>
+<span class="nc" id="L36">					e.printStackTrace();</span>
+<span class="nc" id="L37">				}</span>
+<span class="nc" id="L38">			}</span>
+		});
+<span class="fc" id="L40">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="fc" id="L45">	public VentanaCuenta() {</span>
+<span class="fc" id="L46">		initialize();</span>
+<span class="fc" id="L47">	}</span>
+	
+	public void set_visible(boolean b) {
+<span class="nc" id="L50">		frame.setVisible(b);</span>
+<span class="nc" id="L51">	}</span>
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+<span class="fc" id="L56">		frame = new JFrame();</span>
+<span class="fc" id="L57">		frame.setBounds(100, 100, 625, 299);</span>
+<span class="fc" id="L58">		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L59">		frame.getContentPane().setLayout(null);</span>
+		
+<span class="fc" id="L61">		JLabel lblIDComanda = new JLabel(&quot;Introduzca el ID de la comanda:&quot;);</span>
+<span class="fc" id="L62">		lblIDComanda.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 17));</span>
+<span class="fc" id="L63">		lblIDComanda.setBounds(10, 38, 266, 33);</span>
+<span class="fc" id="L64">		frame.getContentPane().add(lblIDComanda);</span>
+		
+<span class="fc" id="L66">		txtIDComanda = new JTextField();</span>
+<span class="fc" id="L67">		txtIDComanda.setBounds(286, 47, 96, 20);</span>
+<span class="fc" id="L68">		frame.getContentPane().add(txtIDComanda);</span>
+<span class="fc" id="L69">		txtIDComanda.setColumns(10);</span>
+		
+<span class="fc" id="L71">		JLabel lblPrecio = new JLabel(&quot;Precio de la comanda:&quot;);</span>
+<span class="fc" id="L72">		lblPrecio.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 17));</span>
+<span class="fc" id="L73">		lblPrecio.setBounds(10, 225, 179, 27);</span>
+<span class="fc" id="L74">		frame.getContentPane().add(lblPrecio);</span>
+		
+<span class="fc" id="L76">		txtPrecio = new JTextField();</span>
+<span class="fc" id="L77">		txtPrecio.setBounds(199, 231, 131, 20);</span>
+<span class="fc" id="L78">		frame.getContentPane().add(txtPrecio);</span>
+<span class="fc" id="L79">		txtPrecio.setColumns(10);</span>
+		
+<span class="fc" id="L81">		JButton btnCalcularPrecio = new JButton(&quot;Calacular Precio&quot;);</span>
+<span class="fc" id="L82">		btnCalcularPrecio.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L84">				GestorComanda gestor_comanda = new GestorComanda();</span>
+				try {
+<span class="nc" id="L86">					GestorCamarero.cambiarEstado(&quot;Esperando la cuenta&quot;, Integer.parseInt(txtIDMesa.getText()));</span>
+<span class="nc" id="L87">					double cuenta = 0;</span>
+<span class="nc" id="L88">					cuenta = gestor_comanda.prepararCuenta(Integer.parseInt(txtIDComanda.getText()));</span>
+<span class="nc" id="L89">					txtPrecio.setText(String.valueOf(cuenta));</span>
+<span class="nc" id="L90">				} catch (Exception e) {</span>
+<span class="nc" id="L91">					e.printStackTrace();</span>
+<span class="nc" id="L92">				}</span>
+<span class="nc" id="L93">			}</span>
+		});
+<span class="fc" id="L95">		btnCalcularPrecio.setBounds(253, 164, 111, 23);</span>
+<span class="fc" id="L96">		frame.getContentPane().add(btnCalcularPrecio);</span>
+		
+<span class="fc" id="L98">		JLabel lblIDMesa = new JLabel(&quot;Introduzca el ID de la mesa que ha realizado el pago:&quot;);</span>
+<span class="fc" id="L99">		lblIDMesa.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 17));</span>
+<span class="fc" id="L100">		lblIDMesa.setBounds(10, 92, 415, 32);</span>
+<span class="fc" id="L101">		frame.getContentPane().add(lblIDMesa);</span>
+		
+<span class="fc" id="L103">		txtIDMesa = new JTextField();</span>
+<span class="fc" id="L104">		txtIDMesa.setBounds(435, 101, 96, 20);</span>
+<span class="fc" id="L105">		frame.getContentPane().add(txtIDMesa);</span>
+<span class="fc" id="L106">		txtIDMesa.setColumns(10);</span>
+		
+<span class="fc" id="L108">		JButton btnConfirmarPago = new JButton(&quot;Confirmar Pago&quot;);</span>
+<span class="fc" id="L109">		btnConfirmarPago.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+<span class="nc" id="L112">					GestorCamarero.prepararMesa(Integer.parseInt(txtIDMesa.getText()));</span>
+<span class="nc" id="L113">					JOptionPane.showMessageDialog(frame, &quot;Confirmado pago de la cuenta, cambiando el estado de la mesa...&quot;, &quot;Cuenta Pagada&quot;,</span>
+							JOptionPane.INFORMATION_MESSAGE);
+<span class="nc" id="L115">				} catch (Exception e) {</span>
+<span class="nc" id="L116">					e.printStackTrace();</span>
+<span class="nc" id="L117">				}</span>
+<span class="nc" id="L118">			}</span>
+		});
+<span class="fc" id="L120">		btnConfirmarPago.setBounds(340, 230, 111, 23);</span>
+<span class="fc" id="L121">		frame.getContentPane().add(btnConfirmarPago);</span>
+		
+<span class="fc" id="L123">		JButton btnLiberarMesa = new JButton(&quot;Liberar Mesa&quot;);</span>
+<span class="fc" id="L124">		btnLiberarMesa.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+<span class="nc" id="L127">				GestorCamarero.cambiarEstado(&quot;LIBRE&quot;, Integer.parseInt(txtIDMesa.getText()));</span>
+<span class="nc" id="L128">				JOptionPane.showMessageDialog(frame, &quot;Mesa preparada, cambiando el estado de la mesa...&quot;, &quot;Liberar Mesa&quot;,</span>
+						+ JOptionPane.INFORMATION_MESSAGE);
+<span class="nc" id="L130">				} catch (Exception ex) {</span>
+<span class="nc" id="L131">					ex.printStackTrace();</span>
+<span class="nc" id="L132">				}</span>
+<span class="nc" id="L133">			}</span>
+		});
+<span class="fc" id="L135">		btnLiberarMesa.setBounds(461, 230, 101, 23);</span>
+<span class="fc" id="L136">		frame.getContentPane().add(btnLiberarMesa);</span>
+<span class="fc" id="L137">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

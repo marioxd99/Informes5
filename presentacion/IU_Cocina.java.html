@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IU_Cocina.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C02</a> &gt; <a href="index.source.html" class="el_package">presentacion</a> &gt; <span class="el_source">IU_Cocina.java</span></div><h1>IU_Cocina.java</h1><pre class="source lang-java linenums">package presentacion;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class IU_Cocina {
+
+	private JFrame frame;
+	private JTextField txtEstadoComanda;
+	private JTextField txtComandaActual;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="fc" id="L26">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="fc" id="L29">					IU_Cocina window = new IU_Cocina();</span>
+<span class="fc" id="L30">					window.frame.setVisible(true);</span>
+<span class="nc" id="L31">				} catch (Exception e) {</span>
+<span class="nc" id="L32">					e.printStackTrace();</span>
+<span class="fc" id="L33">				}</span>
+<span class="fc" id="L34">			}</span>
+		});
+<span class="fc" id="L36">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="fc" id="L41">	public IU_Cocina() {</span>
+<span class="fc" id="L42">		initialize();</span>
+<span class="fc" id="L43">	}</span>
+	
+	public void set_visible(boolean b) {
+<span class="nc" id="L46">		frame.setVisible(b);</span>
+<span class="nc" id="L47">	}</span>
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+<span class="fc" id="L53">		frame = new JFrame();</span>
+<span class="fc" id="L54">		frame.setBounds(100, 100, 625, 426);</span>
+<span class="fc" id="L55">		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L56">		frame.getContentPane().setLayout(null);</span>
+		
+<span class="fc" id="L58">		txtEstadoComanda = new JTextField();</span>
+<span class="fc" id="L59">		txtEstadoComanda.setBounds(337, 147, 129, 31);</span>
+<span class="fc" id="L60">		frame.getContentPane().add(txtEstadoComanda);</span>
+<span class="fc" id="L61">		txtEstadoComanda.setColumns(10);</span>
+		
+<span class="fc" id="L63">		JRadioButton rdbnComidaLista = new JRadioButton(&quot;COMANDA PREPARADA&quot;);</span>
+<span class="fc" id="L64">		rdbnComidaLista.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L65">		rdbnComidaLista.setBounds(216, 300, 250, 64);</span>
+<span class="fc" id="L66">		frame.getContentPane().add(rdbnComidaLista);</span>
+		
+<span class="fc" id="L68">		txtComandaActual = new JTextField();</span>
+<span class="fc" id="L69">		txtComandaActual.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				
+<span class="nc" id="L72">			}</span>
+		});
+<span class="fc" id="L74">		txtComandaActual.setColumns(10);</span>
+<span class="fc" id="L75">		txtComandaActual.setBounds(86, 154, 156, 131);</span>
+<span class="fc" id="L76">		frame.getContentPane().add(txtComandaActual);</span>
+		
+<span class="fc" id="L78">		JLabel lblEstadoComanda = new JLabel(&quot;ESTADO COMANDA:&quot;);</span>
+<span class="fc" id="L79">		lblEstadoComanda.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L80">		lblEstadoComanda.setBounds(319, 111, 180, 32);</span>
+<span class="fc" id="L81">		frame.getContentPane().add(lblEstadoComanda);</span>
+		
+<span class="fc" id="L83">		JLabel lblComandaActual = new JLabel(&quot;COMANDA ACTUAL:&quot;);</span>
+<span class="fc" id="L84">		lblComandaActual.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 18));</span>
+<span class="fc" id="L85">		lblComandaActual.setBounds(86, 111, 180, 32);</span>
+<span class="fc" id="L86">		frame.getContentPane().add(lblComandaActual);</span>
+<span class="fc" id="L87">	}</span>
+	
+	public static String mostrarAviso() {
+<span class="nc" id="L90">		return &quot;Preparado&quot;;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
